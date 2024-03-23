@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ApiService } from './api.service';
+import { ApiService } from '../services/api.service';
 import { Temperature } from '../models/temperature.model';
 
 @Component({
