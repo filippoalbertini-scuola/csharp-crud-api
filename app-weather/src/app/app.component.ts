@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ApiService } from './api.service';
+import { Temperature } from '../models/temperature.model';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,7 @@ import { ApiService } from './api.service';
 export class AppComponent implements OnInit {
   title = 'app-weather';
 
-  temperatures: any;
+  temperatures: Temperature[] = [];
 
   constructor(private apiService: ApiService) { }
 
