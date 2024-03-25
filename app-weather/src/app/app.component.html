@@ -1,7 +1,12 @@
-<div style="padding: 20px; background-color: white;">
-  <ul style="width: 70%; margin: 10px 15% 10px 15%;">
-      @for (item of temperatures; track $index) {
-          <li>date {{item.date}} temperature {{item.temperatureC}} summary {{item.summary}}</li>
-      }
-  </ul>
-</div>
+<header
+  annoscolastico="{{ annoscolastico }}"
+  classemateria="{{ classemateria }}"
+  data="{{ data }}"
+  autore="{{ autore }}"
+  titolo="{{ titolo }}"
+></header>
+
+<list-temperatures
+  [temperatures]="temperatures"/>
+
+
