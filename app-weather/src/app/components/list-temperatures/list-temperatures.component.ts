@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Temperature } from '../../models/temperature.model';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'list-temperatures',
@@ -28,5 +29,16 @@ import { Temperature } from '../../models/temperature.model';
   ]
 })
 export class ListTemperaturesComponent {
-  @Input() temperatures: Temperature[] = [];
+  temperatures: Temperature[] = [];
+
+  constructor(private apiService: ApiService) { }
+
+  ngOnInit(): void {
+    console.log('ngOnInit ')
+    this.apiService.getTemperature().subscribe((data)=>{
+      this.temperatures = data;
+      console.log('temperatures ' + JSON.stringify(data))
+    });
+  }
+
 }

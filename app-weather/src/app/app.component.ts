@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ApiService } from './services/api.service';
-import { Temperature } from './models/temperature.model';
 import { HeaderComponent } from './components/header/header.component';
 import { ListTemperaturesComponent } from './components/list-temperatures/list-temperatures.component';
 
@@ -19,15 +17,8 @@ export class AppComponent implements OnInit {
   autore="Prof.";
   titolo = "Elenco temperature da API";
 
-  temperatures: Temperature[] = [];
+  constructor() { }
 
-  constructor(private apiService: ApiService) { }
-
-  ngOnInit(): void {
-    console.log('ngOnInit ')
-    this.apiService.getTemperature().subscribe((data)=>{
-      this.temperatures = data;
-      console.log('temperatures ' + JSON.stringify(data))
-    });
+  ngOnInit(){
   }
 }
